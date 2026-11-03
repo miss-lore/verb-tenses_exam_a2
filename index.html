@@ -632,7 +632,7 @@
                 resetForm(); btn.disabled = false; res.textContent = '';
                 const t = document.getElementById('toast'); t.textContent = '✓ Exam sent. Thank you, ' + name + '!'; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 6000);
             } catch (e) {
-                btn.disabled = false; res.textContent = 'Could not send. Please check your connection and try again.';
+                btn.disabled = false; res.textContent = 'Error: ' + e.message;
             }
         }
     </script>
