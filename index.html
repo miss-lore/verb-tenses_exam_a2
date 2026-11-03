@@ -1,211 +1,641 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>English Exam – Verb Tenses</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#F3F4F9;--surface:#fff;--surface2:#F0F2F8;--ink:#11131A;--muted:#6B7285;--line:#E3E6EE;
---shadow:0 1px 2px rgba(16,24,40,.05),0 18px 40px -18px rgba(16,24,40,.18);
---s1:#3D63F0;--s2:#0E9F8E;--s3:#E8456E;
---t1:#2F5BEA;--t2:#0E8F83;--t3:#C98A12;--t4:#E0622B;--t5:#D63C5E;--t6:#7B52E8;--t7:#BF3FCB;--t8:#3E9A33;
---display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;--body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace}
-@media(prefers-color-scheme:dark){:root{--bg:#0C0E13;--surface:#151922;--surface2:#1D222D;--ink:#F1F3F7;--muted:#9097A6;--line:#272D3A;
---shadow:0 1px 0 rgba(255,255,255,.03) inset,0 18px 40px -18px rgba(0,0,0,.7);--s1:#8AA4FF;--s2:#4FD1C0;--s3:#FF7FA0;
---t1:#7FA0FF;--t2:#4FD1C0;--t3:#F2B84B;--t4:#FF9A62;--t5:#FF7A9A;--t6:#B79CFF;--t7:#E58CF2;--t8:#7FD672;color-scheme:dark}}
-*{box-sizing:border-box}
-body{margin:0;background-color:var(--bg);background-image:radial-gradient(60rem 26rem at 12% -8%,color-mix(in srgb,var(--s1) 14%,transparent),transparent 70%),radial-gradient(48rem 24rem at 96% -6%,color-mix(in srgb,var(--s3) 12%,transparent),transparent 70%);background-repeat:no-repeat;
-color:var(--ink);font:16px/1.55 var(--body);padding:44px max(20px,env(safe-area-inset-right)) 72px max(20px,env(safe-area-inset-left))}
-.wrap{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
-#prog{position:fixed;top:0;left:0;height:5px;width:0;background:linear-gradient(90deg,var(--s1),var(--s2),var(--s3));transition:width .3s;z-index:9}
-h1{font:700 clamp(2.7rem,9vw,3.9rem)/1 var(--display);letter-spacing:-.045em;margin:0}
-.sub{margin:12px 0 0;color:var(--muted);font-size:1.05rem}
-.mono{font:500 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase}
-.chips{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:22px}
-.chip{display:inline-flex;align-items:center;gap:7px;font-size:.88rem;font-weight:600;white-space:nowrap}
-.chip::before,.dot{content:"";width:9px;height:9px;border-radius:50%;background:var(--c);flex:none;display:inline-block}
-.dot{margin-right:7px}
-.total{display:inline-block;margin-top:22px;padding:5px 14px;border-radius:99px;background:var(--ink);color:var(--bg)}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:20px}
-@media(max-width:480px){.card{padding:20px;border-radius:24px}}
-.s1{--h:var(--s1)}.s2{--h:var(--s2)}.s3{--h:var(--s3)}.s4{--h:var(--t4)}.s5{--h:var(--t6)}.s6{--h:var(--t3)}.s7{--h:var(--t7)}.s8{--h:var(--t8)}
-.vhead{display:flex;align-items:center;gap:14px}
-.ico{flex:none;width:52px;height:52px;border-radius:17px;display:grid;place-items:center;font-size:1.5rem;background:color-mix(in srgb,var(--h) 16%,var(--surface))}
-.vhead h2{font:700 clamp(1.3rem,4.5vw,1.8rem)/1.1 var(--display);letter-spacing:-.03em;margin:0}
-.vhead .mono{color:var(--h);display:block;margin-bottom:4px}
-.inst{margin:0;color:var(--muted);font-size:.96rem}
-.name{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.name label{font-weight:700}
-.blank,.line,select{font:inherit;color:var(--ink);background:var(--surface2);border:1.5px solid var(--line);border-radius:14px;padding:8px 14px;transition:border-color .15s,box-shadow .15s;outline:0}
-.blank:focus,.line:focus,select:focus{border-color:var(--h,var(--s1));box-shadow:0 0 0 4px color-mix(in srgb,var(--h,var(--s1)) 16%,transparent)}
-.line{flex:1;min-width:220px;font-size:1.05rem}
-.blank{font-weight:600;width:14ch;max-width:100%;text-align:center;font-size:.92em}
-.row{display:flex;gap:14px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line)}
-.row:first-of-type{border-top:0}
-.n{flex:none;width:2ch;color:var(--h);font:600 .85rem var(--mono)}
-.lead{margin:0;font:600 1.12rem/1.9 var(--display);letter-spacing:-.01em}
-.verb{font:500 .66rem var(--mono);color:var(--h);background:color-mix(in srgb,var(--h) 12%,var(--surface));border-radius:8px;padding:2px 8px;white-space:nowrap;vertical-align:.1em}
-.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-.opts label{display:inline-flex;align-items:center;border:1.5px solid var(--line);background:var(--surface2);border-radius:99px;padding:5px 14px;font-size:.92rem;font-weight:500;cursor:pointer;transition:.15s}
-.opts label:hover{border-color:var(--h)}.opts input{display:none}
-.opts label:has(input:checked){background:var(--c);border-color:var(--c);color:#fff}.opts label:has(input:checked) .dot{background:#fff}
-.sel{flex:1;display:flex;flex-direction:column;gap:6px}
-.sel select{width:100%;max-width:340px}
-.send{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-button.go{font:700 1rem var(--body);color:#fff;border:0;border-radius:99px;padding:14px 30px;cursor:pointer;background:linear-gradient(90deg,var(--s1),var(--s3));box-shadow:var(--shadow);transition:transform .2s}
-button.go:hover{transform:translateY(-2px)}
-button.go:disabled{opacity:.6;cursor:wait}
-#res{color:var(--muted);margin:0}#res.ok{color:var(--s2);font-weight:700}
-:focus-visible{outline:2.5px solid var(--ink);outline-offset:3px;border-radius:8px}
-#toast{position:fixed;top:18px;left:50%;transform:translate(-50%,-120px);background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:99px;font-weight:700;box-shadow:var(--shadow);transition:transform .4s;z-index:20;max-width:90vw;text-align:center}#toast.on{transform:translate(-50%,0)}
-</style></head><body>
-<div id="prog"></div><div id="toast"></div>
-<div class="wrap">
-<header>
- <h1>English Exam</h1><p class="sub">Verb tenses: read carefully and answer every question.</p>
- <div class="chips" id="chips"></div>
- <span class="total mono">Total: 85 points</span>
-</header>
+<html lang="en">
 
-<section class="card s1"><div class="name"><label for="nm">Your name</label><input class="line" id="nm" placeholder="Write your full name" autocomplete="name"></div></section>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>English Exam – Verb Tenses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F3F4F9;
+            --surface: #fff;
+            --surface2: #F0F2F8;
+            --ink: #11131A;
+            --muted: #6B7285;
+            --line: #E3E6EE;
+            --shadow: 0 1px 2px rgba(16, 24, 40, .05), 0 18px 40px -18px rgba(16, 24, 40, .18);
+            --s1: #3D63F0;
+            --s2: #0E9F8E;
+            --s3: #E8456E;
+            --t1: #2F5BEA;
+            --t2: #0E8F83;
+            --t3: #C98A12;
+            --t4: #E0622B;
+            --t5: #D63C5E;
+            --t6: #7B52E8;
+            --t7: #BF3FCB;
+            --t8: #3E9A33;
+            --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+            --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+            --mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace
+        }
 
-<section class="card s1">
- <div class="vhead"><div class="ico">✍️</div><div><span class="mono">Part 1 · 20 points</span><h2>Complete the sentences</h2></div></div>
- <p class="inst">Write the correct form of the verb in brackets. Pay attention to the verb tense.</p>
- <div id="p1"></div>
-</section>
+        @media(prefers-color-scheme:dark) {
+            :root {
+                --bg: #0C0E13;
+                --surface: #151922;
+                --surface2: #1D222D;
+                --ink: #F1F3F7;
+                --muted: #9097A6;
+                --line: #272D3A;
+                --shadow: 0 1px 0 rgba(255, 255, 255, .03) inset, 0 18px 40px -18px rgba(0, 0, 0, .7);
+                --s1: #8AA4FF;
+                --s2: #4FD1C0;
+                --s3: #FF7FA0;
+                --t1: #7FA0FF;
+                --t2: #4FD1C0;
+                --t3: #F2B84B;
+                --t4: #FF9A62;
+                --t5: #FF7A9A;
+                --t6: #B79CFF;
+                --t7: #E58CF2;
+                --t8: #7FD672;
+                color-scheme: dark
+            }
+        }
 
-<section class="card s2">
- <div class="vhead"><div class="ico">🔍</div><div><span class="mono">Part 2 · 10 points</span><h2>Choose the verb tense</h2></div></div>
- <p class="inst">Read the sentences and select the correct verb tense.</p>
- <div id="p2"></div>
-</section>
+        * {
+            box-sizing: border-box
+        }
 
-<section class="card s3">
- <div class="vhead"><div class="ico">⏱️</div><div><span class="mono">Part 3 · 10 points</span><h2>Match the time expressions</h2></div></div>
- <p class="inst">Choose the verb tense that matches each adverb or time expression.</p>
- <div id="p3"></div>
-</section>
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            background-image: radial-gradient(60rem 26rem at 12% -8%, color-mix(in srgb, var(--s1) 14%, transparent), transparent 70%), radial-gradient(48rem 24rem at 96% -6%, color-mix(in srgb, var(--s3) 12%, transparent), transparent 70%);
+            background-repeat: no-repeat;
+            color: var(--ink);
+            font: 16px/1.55 var(--body);
+            padding: 44px max(20px, env(safe-area-inset-right)) 72px max(20px, env(safe-area-inset-left))
+        }
 
-<section class="card s4">
- <div class="vhead"><div class="ico">🚫</div><div><span class="mono">Part 4 · 15 points</span><h2>Make it negative</h2></div></div>
- <p class="inst">Rewrite each sentence in the negative form.</p>
- <div id="p4"></div>
-</section>
+        .wrap {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px
+        }
 
-<section class="card s6">
- <div class="vhead"><div class="ico">⏳</div><div><span class="mono">Part 5 · 10 points</span><h2>When or while?</h2></div></div>
- <p class="inst">Choose WHEN or WHILE to complete each sentence.</p>
- <div id="p5"></div>
-</section>
+        #prog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 0;
+            background: linear-gradient(90deg, var(--s1), var(--s2), var(--s3));
+            transition: width .3s;
+            z-index: 9
+        }
 
-<section class="card s7">
- <div class="vhead"><div class="ico">🔮</div><div><span class="mono">Part 6 · 10 points</span><h2>Will or going to?</h2></div></div>
- <p class="inst">Choose the correct form to talk about the future.</p>
- <div id="p6"></div>
-</section>
+        h1 {
+            font: 700 clamp(2.7rem, 9vw, 3.9rem)/1 var(--display);
+            letter-spacing: -.045em;
+            margin: 0
+        }
 
-<section class="card s8">
- <div class="vhead"><div class="ico">💬</div><div><span class="mono">Part 7 · 10 points</span><h2>Short answers</h2></div></div>
- <p class="inst">Complete the short answers.</p>
- <div id="p7"></div>
-</section>
+        .sub {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 1.05rem
+        }
 
-<div class="send"><button class="go" onclick="send()">Send exam →</button><p id="res"></p></div>
-</div>
-<script>
-// ⚠️ Pegá acá la URL /exec de tu implementación de Apps Script
-const SCRIPT_URL='PEGA_ACA_LA_URL_EXEC';
+        .mono {
+            font: 500 .72rem var(--mono);
+            letter-spacing: .04em;
+            text-transform: uppercase
+        }
 
-const T=["Present of Verb To Be","Simple Present","Present Continuous","Past of Verb To Be","Simple Past","Past Continuous","Future Will","Future Going To"];
-const TC=n=>'var(--t'+(T.indexOf(n)+1)+')';
-document.getElementById('chips').innerHTML=T.map(t=>'<span class="chip" style="--c:'+TC(t)+'">'+t+'</span>').join('');
-const P1=[
-["My sister","is","very happy today.","be"],["They","play","football every Saturday.","play"],["Look! The baby","is sleeping","now.","sleep"],
-["We","were","at school yesterday.","be"],["Tom","visited","his grandparents last weekend.","visit"],["I","was watching","TV when my mum arrived.","watch"],
-["I think it","will rain","tomorrow.","rain"],["She","is going to study|is studying","English tonight. She has a test tomorrow.","study"],
-["My parents","work","in a hospital.","work"],["Listen! The birds","are singing","in the garden.","sing"],["He","was not","at home yesterday.","not / be"],
-["Sarah","bought","a new dress two days ago.","buy"],["They","were having","dinner when the phone rang.","have"],["I promise I","will help","you with your homework.","help"],
-["We","are going to travel","to Brazil next summer. We have already bought the tickets.","travel"],["Peter","is","my best friend.","be"],
-["My brother","does not like","vegetables.","not / like"],["","",""],["She","is not watching","TV at the moment.","not / watch"],["","were",""]];
-const ANS1=P1.map((q,i)=>i==17?[["were"],["doing"]]:[q[1].split('|')]);
-const norm=s=>s.toLowerCase().replace(/’/g,"'").replace(/[.?!,]/g,"").replace(/\bwon't\b/,"will not").replace(/'m\b/g," am").replace(/'re\b/g," are").replace(/'ll\b/g," will").replace(/n't\b/g," not").replace(/\s+/g," ").trim();
-const inp=(i,k)=>'<input class="blank" data-i="'+i+'" data-k="'+k+'" autocomplete="off" autocapitalize="off" spellcheck="false">';
-document.getElementById('p1').innerHTML=P1.map((q,i)=>{
- let t=i==17?'What '+inp(i,0)+' you '+inp(i,1)+' <span class="verb">do</span> at 8 p.m. last night?'
-  :i==19?inp(i,0)+' they at the cinema last night? <span class="verb">be</span>'
-  :q[0]+' '+inp(i,0)+' <span class="verb">'+q[3]+'</span> '+q[2];
- return '<div class="row s1"><span class="n">'+(i+1)+'</span><p class="lead">'+t+'</p></div>'}).join('');
-const P2=[["She is very tired today.",0,0],["He plays tennis every Sunday.",1,1],["They are studying English now.",2,2],["We were at the beach yesterday.",3,3],["I visited my aunt last week.",4,4],["She was cooking when I arrived.",5,5],["I think you will pass the exam.",6,6],["They are going to buy a new car.",7,7],["My friends aren't at school today.",0,0],["He didn't go to school yesterday.",4,4]];
-const OPT2=[[0,1,3],[2,1,4],[2,1,5],[0,3,4],[1,4,5],[2,4,5],[6,7,1],[2,6,7],[3,0,1],[5,4,6]];
-document.getElementById('p2').innerHTML=P2.map((q,i)=>'<div class="row s2"><span class="n">'+(i+1)+'</span><div><p class="lead">'+q[0]+'</p><div class="opts">'+OPT2[i].map(o=>'<label style="--c:'+TC(T[o])+'"><input type="radio" name="r'+i+'" value="'+o+'"><span class="dot"></span>'+T[o]+'</label>').join('')+'</div></div></div>').join('');
-// answers: correct tense index per item
-const ANS2=[0,1,2,3,4,5,6,7,0,4];
-const EX=[["Yesterday","Simple Past"],["Every day","Simple Present"],["Right now","Present Continuous"],["At 8 p.m. yesterday","Past Continuous"],["Tomorrow","Future Will"],["Next summer (planned trip)","Future Going To"],["Today (describing how someone is)","Present of Verb To Be"],["Last night (describing where someone was)","Past of Verb To Be"],["Usually","Simple Present"],["At the moment","Present Continuous"]];
-document.getElementById('p3').innerHTML=EX.map((e,i)=>'<div class="row s3"><span class="n">'+(i+1)+'</span><div class="sel"><p class="lead">'+e[0]+'</p><select data-m="'+i+'"><option value="">Choose a tense…</option>'+T.map(t=>'<option>'+t+'</option>').join('')+'</select></div></div>').join('');
-// Parts 4-7
-const NEG=[["She is a doctor.","She is not a doctor."],["They play football on Sundays.","They do not play football on Sundays."],["I am studying now.","I am not studying now."],["He was at home yesterday.","He was not at home yesterday."],["We visited our aunt last week.","We did not visit our aunt last week."],["She was watching TV at 8 p.m.","She was not watching TV at 8 p.m."],["They are going to travel next month.","They are not going to travel next month."],["I will study tomorrow.","I will not study tomorrow."],["My mother works in a school.","My mother does not work in a school."],["The children were happy.","The children were not happy."],["He went to school last Monday.","He did not go to school last Monday."],["You are playing videogames.","You are not playing videogames."],["She will travel next year.","She will not travel next year."],["They are at the cinema.","They are not at the cinema."],["We were playing football.","We were not playing football."]];
-const WW=[["I was watching TV _____ my mom called me.",1],["_____ I arrived, they were eating dinner.",0],["She was studying _____ I called her.",1],["_____ she was studying, I called her.",1],["I called her _____ she was studying.",0],["They were eating dinner _____ I arrived.",1],["_____ I was watching TV, my mom called me.",1],["He was sleeping _____ the phone rang.",0],["_____ it started to rain, we were playing football.",1],["I was cooking _____ my sister was studying.",1]].map(q=>[q[0],q[1]]);
-// WW answers: 0 = When, 1 = While (index into ["When","While"]); fixed below
-const WWA=[0,0,0,1,1,0,1,0,0,1];
-const WG=[["Look at those clouds! It _____ rain.",1],["It's cold. I _____ close the door.",0],["She already has a plan: she _____ learn how to cook Mexican food.",1],["I promise I _____ never be late again.",0],["Look at the baby! He _____ cry.",1],["I think he _____ pass the exam.",0],["We have already bought the tickets. We _____ travel to Brazil.",1],["Don't worry! I _____ drive you to the airport tomorrow.",0],["There _____ be a concert tonight.",0],["I decided yesterday: I _____ study tomorrow.",1]];
-const SA=[["Is she a doctor? Yes, she","is"],["Does he play videogames? No, he","doesn't|does not"],["Do you play videogames? Yes, I","do"],["Are you studying? No, I","am not|'m not"],["Was she a doctor? Yes, she","was"],["Were they happy? No, they","weren't|were not"],["Did she play tennis yesterday? Yes, she","did"],["Is she watching TV? No, she","isn't|is not"],["Are they playing football? Yes, they","are"],["Did he go to school? No, he","didn't|did not"]];
-const line=(g,j,ph)=>'<input class="line" data-g="'+g+'" data-j="'+j+'" placeholder="'+ph+'" autocomplete="off" autocapitalize="off" spellcheck="false">';
-const pills=(nm,j,opts)=>'<div class="opts">'+opts.map((o,k)=>'<label style="--c:var(--h)"><input type="radio" name="'+nm+j+'" value="'+k+'">'+o+'</label>').join('')+'</div>';
-const rows=(id,cls,arr,body)=>document.getElementById(id).innerHTML=arr.map((q,j)=>'<div class="row '+cls+'"><span class="n">'+(j+1)+'</span><div class="sel">'+body(q,j)+'</div></div>').join('');
-rows('p4','s4',NEG,(q,j)=>'<p class="lead">'+q[0]+'</p>'+line('neg',j,'Write the negative sentence'));
-rows('p5','s6',WW,(q,j)=>'<p class="lead">'+q[0]+'</p>'+pills('ww',j,['When','While']));
-rows('p6','s7',WG,(q,j)=>'<p class="lead">'+q[0]+'</p>'+pills('wg',j,['Will','Going to']));
-rows('p7','s8',SA,(q,j)=>'<p class="lead">'+q[0]+' <input class="blank" data-g="sa" data-j="'+j+'" autocomplete="off" autocapitalize="off" spellcheck="false">.</p>');
-WW.forEach((q,j)=>q[1]=WWA[j]);
-// progress
-function prog(){let d=0;
- P1.forEach((q,i)=>{if([...document.querySelectorAll('[data-i="'+i+'"]')].every(e=>e.value.trim()))d++});
- d+=document.querySelectorAll('input[type=radio]:checked').length;
- d+=[...document.querySelectorAll('[data-m],[data-g]')].filter(e=>e.value.trim()).length;
- document.getElementById('prog').style.width=(d/85*100)+'%'}
-document.addEventListener('input',prog);document.addEventListener('change',prog);
-function compute(){
- const S=[0,0,0,0,0,0,0],L=[];
- const H=(n,t)=>L.push(...(n?['']:[]),'PART '+(n+1)+' – '+t);
- const txt=(g,arr,n)=>arr.forEach((q,j)=>{const v=document.querySelector('[data-g="'+g+'"][data-j="'+j+'"]').value;const al=q[1].split('|');const good=al.map(norm).includes(norm(v));if(good)S[n]++;L.push((j+1)+'. '+(v.trim()||'-')+(good?' ✓':' ✗ ('+al[0]+')'))});
- const rad=(nm,arr,opts,n)=>arr.forEach((q,j)=>{const c=document.querySelector('input[name='+nm+j+']:checked');const good=c&&+c.value===q[1];if(good)S[n]++;L.push((j+1)+'. '+(c?opts[+c.value]:'-')+(good?' ✓':' ✗ ('+opts[q[1]]+')'))});
- H(0,'Complete');
- P1.forEach((q,i)=>{const ins=[...document.querySelectorAll('[data-i="'+i+'"]')];
-  const all=ins.every((el,k)=>ANS1[i][k].map(norm).includes(norm(el.value)));if(all)S[0]++;
-  L.push((i+1)+'. '+ins.map(e=>e.value.trim()||'-').join(' / ')+(all?' ✓':' ✗ ('+ANS1[i].map(a=>a[0]).join('/')+')'))});
- H(1,'Verb tense');
- P2.forEach((q,i)=>{const c=document.querySelector('input[name=r'+i+']:checked');const good=c&&+c.value===ANS2[i];if(good)S[1]++;
-  L.push((i+1)+'. '+(c?T[+c.value]:'-')+(good?' ✓':' ✗ ('+T[ANS2[i]]+')'))});
- H(2,'Time expressions');
- [...document.querySelectorAll('[data-m]')].forEach((el,i)=>{const good=el.value===EX[i][1];if(good)S[2]++;
-  L.push((i+1)+'. '+EX[i][0]+' → '+(el.value||'-')+(good?' ✓':' ✗ ('+EX[i][1]+')'))});
- H(3,'Negatives');txt('neg',NEG,3);
- H(4,'When / While');rad('ww',WW,['When','While'],4);
- H(5,'Will / Going to');rad('wg',WG,['Will','Going to'],5);
- H(6,'Short answers');txt('sa',SA,6);
- const total=S.reduce((a,b)=>a+b,0),name=document.getElementById('nm').value.trim(),M=[20,10,10,15,10,10,10];
- return{total,S,text:'Student: '+(name||'(no name)')+'\nSCORE: '+total+'/85\n'+S.map((v,i)=>'P'+(i+1)+': '+v+'/'+M[i]).join(' · ')+'\n\n'+L.join('\n')};
-}
-function resetForm(){
- document.querySelectorAll('input').forEach(e=>{if(e.type==='radio')e.checked=false;else e.value=''});
- document.querySelectorAll('select').forEach(e=>e.selectedIndex=0);
- prog();window.scrollTo({top:0,behavior:'smooth'});
-}
-async function send(){
- const name=document.getElementById('nm').value.trim(),res=document.getElementById('res'),btn=document.querySelector('button.go');res.className='';
- if(!name){res.textContent='Please write your name before sending.';document.getElementById('nm').focus();return}
- const r=compute();btn.disabled=true;res.textContent='Sending…';
- try{
-  const resp=await fetch(SCRIPT_URL,{
-   method:'POST',
-   headers:{'Content-Type':'text/plain;charset=utf-8'},
-   body:JSON.stringify({name:name,total:r.total,parts:r.S,detail:r.text})
-  });
-  const out=await resp.json();
-  if(!out.ok)throw new Error(out.error||'error');
-  resetForm();btn.disabled=false;res.textContent='';
-  const t=document.getElementById('toast');t.textContent='✓ Exam sent. Thank you, '+name+'!';t.classList.add('on');setTimeout(()=>t.classList.remove('on'),6000);
- }catch(e){
-  btn.disabled=false;res.textContent='Could not send. Please check your connection and try again.';
- }
-}
-</script></body></html>
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 22px
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: .88rem;
+            font-weight: 600;
+            white-space: nowrap
+        }
+
+        .chip::before,
+        .dot {
+            content: "";
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--c);
+            flex: none;
+            display: inline-block
+        }
+
+        .dot {
+            margin-right: 7px
+        }
+
+        .total {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 5px 14px;
+            border-radius: 99px;
+            background: var(--ink);
+            color: var(--bg)
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px
+        }
+
+        @media(max-width:480px) {
+            .card {
+                padding: 20px;
+                border-radius: 24px
+            }
+        }
+
+        .s1 {
+            --h: var(--s1)
+        }
+
+        .s2 {
+            --h: var(--s2)
+        }
+
+        .s3 {
+            --h: var(--s3)
+        }
+
+        .s4 {
+            --h: var(--t4)
+        }
+
+        .s5 {
+            --h: var(--t6)
+        }
+
+        .s6 {
+            --h: var(--t3)
+        }
+
+        .s7 {
+            --h: var(--t7)
+        }
+
+        .s8 {
+            --h: var(--t8)
+        }
+
+        .vhead {
+            display: flex;
+            align-items: center;
+            gap: 14px
+        }
+
+        .ico {
+            flex: none;
+            width: 52px;
+            height: 52px;
+            border-radius: 17px;
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+            background: color-mix(in srgb, var(--h) 16%, var(--surface))
+        }
+
+        .vhead h2 {
+            font: 700 clamp(1.3rem, 4.5vw, 1.8rem)/1.1 var(--display);
+            letter-spacing: -.03em;
+            margin: 0
+        }
+
+        .vhead .mono {
+            color: var(--h);
+            display: block;
+            margin-bottom: 4px
+        }
+
+        .inst {
+            margin: 0;
+            color: var(--muted);
+            font-size: .96rem
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap
+        }
+
+        .name label {
+            font-weight: 700
+        }
+
+        .blank,
+        .line,
+        select {
+            font: inherit;
+            color: var(--ink);
+            background: var(--surface2);
+            border: 1.5px solid var(--line);
+            border-radius: 14px;
+            padding: 8px 14px;
+            transition: border-color .15s, box-shadow .15s;
+            outline: 0
+        }
+
+        .blank:focus,
+        .line:focus,
+        select:focus {
+            border-color: var(--h, var(--s1));
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--h, var(--s1)) 16%, transparent)
+        }
+
+        .line {
+            flex: 1;
+            min-width: 220px;
+            font-size: 1.05rem
+        }
+
+        .blank {
+            font-weight: 600;
+            width: 14ch;
+            max-width: 100%;
+            text-align: center;
+            font-size: .92em
+        }
+
+        .row {
+            display: flex;
+            gap: 14px;
+            align-items: baseline;
+            padding: 14px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .row:first-of-type {
+            border-top: 0
+        }
+
+        .n {
+            flex: none;
+            width: 2ch;
+            color: var(--h);
+            font: 600 .85rem var(--mono)
+        }
+
+        .lead {
+            margin: 0;
+            font: 600 1.12rem/1.9 var(--display);
+            letter-spacing: -.01em
+        }
+
+        .verb {
+            font: 500 .66rem var(--mono);
+            color: var(--h);
+            background: color-mix(in srgb, var(--h) 12%, var(--surface));
+            border-radius: 8px;
+            padding: 2px 8px;
+            white-space: nowrap;
+            vertical-align: .1em
+        }
+
+        .opts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px
+        }
+
+        .opts label {
+            display: inline-flex;
+            align-items: center;
+            border: 1.5px solid var(--line);
+            background: var(--surface2);
+            border-radius: 99px;
+            padding: 5px 14px;
+            font-size: .92rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: .15s
+        }
+
+        .opts label:hover {
+            border-color: var(--h)
+        }
+
+        .opts input {
+            display: none
+        }
+
+        .opts label:has(input:checked) {
+            background: var(--c);
+            border-color: var(--c);
+            color: #fff
+        }
+
+        .opts label:has(input:checked) .dot {
+            background: #fff
+        }
+
+        .sel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px
+        }
+
+        .sel select {
+            width: 100%;
+            max-width: 340px
+        }
+
+        .send {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            align-items: flex-start
+        }
+
+        button.go {
+            font: 700 1rem var(--body);
+            color: #fff;
+            border: 0;
+            border-radius: 99px;
+            padding: 14px 30px;
+            cursor: pointer;
+            background: linear-gradient(90deg, var(--s1), var(--s3));
+            box-shadow: var(--shadow);
+            transition: transform .2s
+        }
+
+        button.go:hover {
+            transform: translateY(-2px)
+        }
+
+        button.go:disabled {
+            opacity: .6;
+            cursor: wait
+        }
+
+        #res {
+            color: var(--muted);
+            margin: 0
+        }
+
+        #res.ok {
+            color: var(--s2);
+            font-weight: 700
+        }
+
+        :focus-visible {
+            outline: 2.5px solid var(--ink);
+            outline-offset: 3px;
+            border-radius: 8px
+        }
+
+        #toast {
+            position: fixed;
+            top: 18px;
+            left: 50%;
+            transform: translate(-50%, -120px);
+            background: var(--ink);
+            color: var(--bg);
+            padding: 12px 22px;
+            border-radius: 99px;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: transform .4s;
+            z-index: 20;
+            max-width: 90vw;
+            text-align: center
+        }
+
+        #toast.on {
+            transform: translate(-50%, 0)
+        }
+    </style>
+</head>
+
+<body>
+    <div id="prog"></div>
+    <div id="toast"></div>
+    <div class="wrap">
+        <header>
+            <h1>English Exam</h1>
+            <p class="sub">Verb tenses: read carefully and answer every question.</p>
+            <div class="chips" id="chips"></div>
+            <span class="total mono">Total: 85 points</span>
+        </header>
+
+        <section class="card s1">
+            <div class="name"><label for="nm">Your name</label><input class="line" id="nm"
+                    placeholder="Write your full name" autocomplete="name"></div>
+        </section>
+
+        <section class="card s1">
+            <div class="vhead">
+                <div class="ico">✍️</div>
+                <div><span class="mono">Part 1 · 20 points</span>
+                    <h2>Complete the sentences</h2>
+                </div>
+            </div>
+            <p class="inst">Write the correct form of the verb in brackets. Pay attention to the verb tense.</p>
+            <div id="p1"></div>
+        </section>
+
+        <section class="card s2">
+            <div class="vhead">
+                <div class="ico">🔍</div>
+                <div><span class="mono">Part 2 · 10 points</span>
+                    <h2>Choose the verb tense</h2>
+                </div>
+            </div>
+            <p class="inst">Read the sentences and select the correct verb tense.</p>
+            <div id="p2"></div>
+        </section>
+
+        <section class="card s3">
+            <div class="vhead">
+                <div class="ico">⏱️</div>
+                <div><span class="mono">Part 3 · 10 points</span>
+                    <h2>Match the time expressions</h2>
+                </div>
+            </div>
+            <p class="inst">Choose the verb tense that matches each adverb or time expression.</p>
+            <div id="p3"></div>
+        </section>
+
+        <section class="card s4">
+            <div class="vhead">
+                <div class="ico">🚫</div>
+                <div><span class="mono">Part 4 · 15 points</span>
+                    <h2>Make it negative</h2>
+                </div>
+            </div>
+            <p class="inst">Rewrite each sentence in the negative form.</p>
+            <div id="p4"></div>
+        </section>
+
+        <section class="card s6">
+            <div class="vhead">
+                <div class="ico">⏳</div>
+                <div><span class="mono">Part 5 · 10 points</span>
+                    <h2>When or while?</h2>
+                </div>
+            </div>
+            <p class="inst">Choose WHEN or WHILE to complete each sentence.</p>
+            <div id="p5"></div>
+        </section>
+
+        <section class="card s7">
+            <div class="vhead">
+                <div class="ico">🔮</div>
+                <div><span class="mono">Part 6 · 10 points</span>
+                    <h2>Will or going to?</h2>
+                </div>
+            </div>
+            <p class="inst">Choose the correct form to talk about the future.</p>
+            <div id="p6"></div>
+        </section>
+
+        <section class="card s8">
+            <div class="vhead">
+                <div class="ico">💬</div>
+                <div><span class="mono">Part 7 · 10 points</span>
+                    <h2>Short answers</h2>
+                </div>
+            </div>
+            <p class="inst">Complete the short answers.</p>
+            <div id="p7"></div>
+        </section>
+
+        <div class="send"><button class="go" onclick="send()">Send exam →</button>
+            <p id="res"></p>
+        </div>
+    </div>
+    <script>
+        // ⚠️ Pegá acá la URL /exec de tu implementación de Apps Script
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyZIjixaBQkjjK01s1InXytyxkN7xVtPWJ9fN73l_XVxlxeJ7AUQOJB2tl2AW8fQCe2/exec';
+
+        const T = ["Present of Verb To Be", "Simple Present", "Present Continuous", "Past of Verb To Be", "Simple Past", "Past Continuous", "Future Will", "Future Going To"];
+        const TC = n => 'var(--t' + (T.indexOf(n) + 1) + ')';
+        document.getElementById('chips').innerHTML = T.map(t => '<span class="chip" style="--c:' + TC(t) + '">' + t + '</span>').join('');
+        const P1 = [
+            ["My sister", "is", "very happy today.", "be"], ["They", "play", "football every Saturday.", "play"], ["Look! The baby", "is sleeping", "now.", "sleep"],
+            ["We", "were", "at school yesterday.", "be"], ["Tom", "visited", "his grandparents last weekend.", "visit"], ["I", "was watching", "TV when my mum arrived.", "watch"],
+            ["I think it", "will rain", "tomorrow.", "rain"], ["She", "is going to study|is studying", "English tonight. She has a test tomorrow.", "study"],
+            ["My parents", "work", "in a hospital.", "work"], ["Listen! The birds", "are singing", "in the garden.", "sing"], ["He", "was not", "at home yesterday.", "not / be"],
+            ["Sarah", "bought", "a new dress two days ago.", "buy"], ["They", "were having", "dinner when the phone rang.", "have"], ["I promise I", "will help", "you with your homework.", "help"],
+            ["We", "are going to travel", "to Brazil next summer. We have already bought the tickets.", "travel"], ["Peter", "is", "my best friend.", "be"],
+            ["My brother", "does not like", "vegetables.", "not / like"], ["", "", ""], ["She", "is not watching", "TV at the moment.", "not / watch"], ["", "were", ""]];
+        const ANS1 = P1.map((q, i) => i == 17 ? [["were"], ["doing"]] : [q[1].split('|')]);
+        const norm = s => s.toLowerCase().replace(/’/g, "'").replace(/[.?!,]/g, "").replace(/\bwon't\b/, "will not").replace(/'m\b/g, " am").replace(/'re\b/g, " are").replace(/'ll\b/g, " will").replace(/n't\b/g, " not").replace(/\s+/g, " ").trim();
+        const inp = (i, k) => '<input class="blank" data-i="' + i + '" data-k="' + k + '" autocomplete="off" autocapitalize="off" spellcheck="false">';
+        document.getElementById('p1').innerHTML = P1.map((q, i) => {
+            let t = i == 17 ? 'What ' + inp(i, 0) + ' you ' + inp(i, 1) + ' <span class="verb">do</span> at 8 p.m. last night?'
+                : i == 19 ? inp(i, 0) + ' they at the cinema last night? <span class="verb">be</span>'
+                    : q[0] + ' ' + inp(i, 0) + ' <span class="verb">' + q[3] + '</span> ' + q[2];
+            return '<div class="row s1"><span class="n">' + (i + 1) + '</span><p class="lead">' + t + '</p></div>'
+        }).join('');
+        const P2 = [["She is very tired today.", 0, 0], ["He plays tennis every Sunday.", 1, 1], ["They are studying English now.", 2, 2], ["We were at the beach yesterday.", 3, 3], ["I visited my aunt last week.", 4, 4], ["She was cooking when I arrived.", 5, 5], ["I think you will pass the exam.", 6, 6], ["They are going to buy a new car.", 7, 7], ["My friends aren't at school today.", 0, 0], ["He didn't go to school yesterday.", 4, 4]];
+        const OPT2 = [[0, 1, 3], [2, 1, 4], [2, 1, 5], [0, 3, 4], [1, 4, 5], [2, 4, 5], [6, 7, 1], [2, 6, 7], [3, 0, 1], [5, 4, 6]];
+        document.getElementById('p2').innerHTML = P2.map((q, i) => '<div class="row s2"><span class="n">' + (i + 1) + '</span><div><p class="lead">' + q[0] + '</p><div class="opts">' + OPT2[i].map(o => '<label style="--c:' + TC(T[o]) + '"><input type="radio" name="r' + i + '" value="' + o + '"><span class="dot"></span>' + T[o] + '</label>').join('') + '</div></div></div>').join('');
+        // answers: correct tense index per item
+        const ANS2 = [0, 1, 2, 3, 4, 5, 6, 7, 0, 4];
+        const EX = [["Yesterday", "Simple Past"], ["Every day", "Simple Present"], ["Right now", "Present Continuous"], ["At 8 p.m. yesterday", "Past Continuous"], ["Tomorrow", "Future Will"], ["Next summer (planned trip)", "Future Going To"], ["Today (describing how someone is)", "Present of Verb To Be"], ["Last night (describing where someone was)", "Past of Verb To Be"], ["Usually", "Simple Present"], ["At the moment", "Present Continuous"]];
+        document.getElementById('p3').innerHTML = EX.map((e, i) => '<div class="row s3"><span class="n">' + (i + 1) + '</span><div class="sel"><p class="lead">' + e[0] + '</p><select data-m="' + i + '"><option value="">Choose a tense…</option>' + T.map(t => '<option>' + t + '</option>').join('') + '</select></div></div>').join('');
+        // Parts 4-7
+        const NEG = [["She is a doctor.", "She is not a doctor."], ["They play football on Sundays.", "They do not play football on Sundays."], ["I am studying now.", "I am not studying now."], ["He was at home yesterday.", "He was not at home yesterday."], ["We visited our aunt last week.", "We did not visit our aunt last week."], ["She was watching TV at 8 p.m.", "She was not watching TV at 8 p.m."], ["They are going to travel next month.", "They are not going to travel next month."], ["I will study tomorrow.", "I will not study tomorrow."], ["My mother works in a school.", "My mother does not work in a school."], ["The children were happy.", "The children were not happy."], ["He went to school last Monday.", "He did not go to school last Monday."], ["You are playing videogames.", "You are not playing videogames."], ["She will travel next year.", "She will not travel next year."], ["They are at the cinema.", "They are not at the cinema."], ["We were playing football.", "We were not playing football."]];
+        const WW = [["I was watching TV _____ my mom called me.", 1], ["_____ I arrived, they were eating dinner.", 0], ["She was studying _____ I called her.", 1], ["_____ she was studying, I called her.", 1], ["I called her _____ she was studying.", 0], ["They were eating dinner _____ I arrived.", 1], ["_____ I was watching TV, my mom called me.", 1], ["He was sleeping _____ the phone rang.", 0], ["_____ it started to rain, we were playing football.", 1], ["I was cooking _____ my sister was studying.", 1]].map(q => [q[0], q[1]]);
+        // WW answers: 0 = When, 1 = While (index into ["When","While"]); fixed below
+        const WWA = [0, 0, 0, 1, 1, 0, 1, 0, 0, 1];
+        const WG = [["Look at those clouds! It _____ rain.", 1], ["It's cold. I _____ close the door.", 0], ["She already has a plan: she _____ learn how to cook Mexican food.", 1], ["I promise I _____ never be late again.", 0], ["Look at the baby! He _____ cry.", 1], ["I think he _____ pass the exam.", 0], ["We have already bought the tickets. We _____ travel to Brazil.", 1], ["Don't worry! I _____ drive you to the airport tomorrow.", 0], ["There _____ be a concert tonight.", 0], ["I decided yesterday: I _____ study tomorrow.", 1]];
+        const SA = [["Is she a doctor? Yes, she", "is"], ["Does he play videogames? No, he", "doesn't|does not"], ["Do you play videogames? Yes, I", "do"], ["Are you studying? No, I", "am not|'m not"], ["Was she a doctor? Yes, she", "was"], ["Were they happy? No, they", "weren't|were not"], ["Did she play tennis yesterday? Yes, she", "did"], ["Is she watching TV? No, she", "isn't|is not"], ["Are they playing football? Yes, they", "are"], ["Did he go to school? No, he", "didn't|did not"]];
+        const line = (g, j, ph) => '<input class="line" data-g="' + g + '" data-j="' + j + '" placeholder="' + ph + '" autocomplete="off" autocapitalize="off" spellcheck="false">';
+        const pills = (nm, j, opts) => '<div class="opts">' + opts.map((o, k) => '<label style="--c:var(--h)"><input type="radio" name="' + nm + j + '" value="' + k + '">' + o + '</label>').join('') + '</div>';
+        const rows = (id, cls, arr, body) => document.getElementById(id).innerHTML = arr.map((q, j) => '<div class="row ' + cls + '"><span class="n">' + (j + 1) + '</span><div class="sel">' + body(q, j) + '</div></div>').join('');
+        rows('p4', 's4', NEG, (q, j) => '<p class="lead">' + q[0] + '</p>' + line('neg', j, 'Write the negative sentence'));
+        rows('p5', 's6', WW, (q, j) => '<p class="lead">' + q[0] + '</p>' + pills('ww', j, ['When', 'While']));
+        rows('p6', 's7', WG, (q, j) => '<p class="lead">' + q[0] + '</p>' + pills('wg', j, ['Will', 'Going to']));
+        rows('p7', 's8', SA, (q, j) => '<p class="lead">' + q[0] + ' <input class="blank" data-g="sa" data-j="' + j + '" autocomplete="off" autocapitalize="off" spellcheck="false">.</p>');
+        WW.forEach((q, j) => q[1] = WWA[j]);
+        // progress
+        function prog() {
+            let d = 0;
+            P1.forEach((q, i) => {if ([...document.querySelectorAll('[data-i="' + i + '"]')].every(e => e.value.trim())) d++});
+            d += document.querySelectorAll('input[type=radio]:checked').length;
+            d += [...document.querySelectorAll('[data-m],[data-g]')].filter(e => e.value.trim()).length;
+            document.getElementById('prog').style.width = (d / 85 * 100) + '%'
+        }
+        document.addEventListener('input', prog); document.addEventListener('change', prog);
+        function compute() {
+            const S = [0, 0, 0, 0, 0, 0, 0], L = [];
+            const H = (n, t) => L.push(...(n ? [''] : []), 'PART ' + (n + 1) + ' – ' + t);
+            const txt = (g, arr, n) => arr.forEach((q, j) => {const v = document.querySelector('[data-g="' + g + '"][data-j="' + j + '"]').value; const al = q[1].split('|'); const good = al.map(norm).includes(norm(v)); if (good) S[n]++; L.push((j + 1) + '. ' + (v.trim() || '-') + (good ? ' ✓' : ' ✗ (' + al[0] + ')'))});
+            const rad = (nm, arr, opts, n) => arr.forEach((q, j) => {const c = document.querySelector('input[name=' + nm + j + ']:checked'); const good = c && +c.value === q[1]; if (good) S[n]++; L.push((j + 1) + '. ' + (c ? opts[+c.value] : '-') + (good ? ' ✓' : ' ✗ (' + opts[q[1]] + ')'))});
+            H(0, 'Complete');
+            P1.forEach((q, i) => {
+                const ins = [...document.querySelectorAll('[data-i="' + i + '"]')];
+                const all = ins.every((el, k) => ANS1[i][k].map(norm).includes(norm(el.value))); if (all) S[0]++;
+                L.push((i + 1) + '. ' + ins.map(e => e.value.trim() || '-').join(' / ') + (all ? ' ✓' : ' ✗ (' + ANS1[i].map(a => a[0]).join('/') + ')'))
+            });
+            H(1, 'Verb tense');
+            P2.forEach((q, i) => {
+                const c = document.querySelector('input[name=r' + i + ']:checked'); const good = c && +c.value === ANS2[i]; if (good) S[1]++;
+                L.push((i + 1) + '. ' + (c ? T[+c.value] : '-') + (good ? ' ✓' : ' ✗ (' + T[ANS2[i]] + ')'))
+            });
+            H(2, 'Time expressions');
+            [...document.querySelectorAll('[data-m]')].forEach((el, i) => {
+                const good = el.value === EX[i][1]; if (good) S[2]++;
+                L.push((i + 1) + '. ' + EX[i][0] + ' → ' + (el.value || '-') + (good ? ' ✓' : ' ✗ (' + EX[i][1] + ')'))
+            });
+            H(3, 'Negatives'); txt('neg', NEG, 3);
+            H(4, 'When / While'); rad('ww', WW, ['When', 'While'], 4);
+            H(5, 'Will / Going to'); rad('wg', WG, ['Will', 'Going to'], 5);
+            H(6, 'Short answers'); txt('sa', SA, 6);
+            const total = S.reduce((a, b) => a + b, 0), name = document.getElementById('nm').value.trim(), M = [20, 10, 10, 15, 10, 10, 10];
+            return {total, S, text: 'Student: ' + (name || '(no name)') + '\nSCORE: ' + total + '/85\n' + S.map((v, i) => 'P' + (i + 1) + ': ' + v + '/' + M[i]).join(' · ') + '\n\n' + L.join('\n')};
+        }
+        function resetForm() {
+            document.querySelectorAll('input').forEach(e => {if (e.type === 'radio') e.checked = false; else e.value = ''});
+            document.querySelectorAll('select').forEach(e => e.selectedIndex = 0);
+            prog(); window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        async function send() {
+            const name = document.getElementById('nm').value.trim(), res = document.getElementById('res'), btn = document.querySelector('button.go'); res.className = '';
+            if (!name) {res.textContent = 'Please write your name before sending.'; document.getElementById('nm').focus(); return }
+            const r = compute(); btn.disabled = true; res.textContent = 'Sending…';
+            try {
+                const resp = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'text/plain;charset=utf-8'},
+                    body: JSON.stringify({name: name, total: r.total, parts: r.S, detail: r.text})
+                });
+                const out = await resp.json();
+                if (!out.ok) throw new Error(out.error || 'error');
+                resetForm(); btn.disabled = false; res.textContent = '';
+                const t = document.getElementById('toast'); t.textContent = '✓ Exam sent. Thank you, ' + name + '!'; t.classList.add('on'); setTimeout(() => t.classList.remove('on'), 6000);
+            } catch (e) {
+                btn.disabled = false; res.textContent = 'Could not send. Please check your connection and try again.';
+            }
+        }
+    </script>
+</body>
+
+</html>
